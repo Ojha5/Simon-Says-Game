@@ -15,7 +15,7 @@ body{
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 2rem 0px;
+    margin: 1.8rem 0px;
 }
 
 .btn{
@@ -50,4 +50,13 @@ body{
 
 h1{
     font-size: 2.2rem;
+}
+
+h2{
+    font-weight: 400;
+    margin-top: 1.5rem;
+}
+
+.white{
+    background: white;
 }
