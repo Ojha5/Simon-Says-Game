@@ -43,7 +43,12 @@ function checkAns(ind){
         }
     }
     else{
-        h2.innerText = `Game Over!`;
+        h2.innerHTML = `Game Over ! Your score is <b>${level - 1}</b> <br> Press Any Key to Start`;
+        document.querySelector("body").style.backgroundColor = "red"
+        setTimeout(function(){
+            document.querySelector("body").style.backgroundColor = "white"
+        },150)
+        reset();
     }
 }
 
@@ -61,4 +66,11 @@ function keyPress(){
 let allBtns = document.querySelectorAll(".btn")
 for(btn of allBtns){
     btn.addEventListener("click" , keyPress);
+}
+
+function reset(){
+    level = 0;
+    gameSeq = []
+    userSeq = []
+    isGameStarted = false;
 }
