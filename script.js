@@ -15,10 +15,10 @@ document.addEventListener("keypress" , function(){
     }
 })
 
-let btnFlash = function(btn){
-    btn.classList.add("white")
+let btnFlash = function(btn , flash){
+    (flash == "COMP") ? btn.classList.add("white") : btn.classList.add("grey")
     setTimeout(() => {
-        btn.classList.remove("white")
+        (flash == "COMP") ? btn.classList.remove("white") : btn.classList.remove("grey")
     } , 250)
 }
 
@@ -30,5 +30,16 @@ let levelUp = function(){
     let randColor = btns[randInd] // Yeh color define kar raha hai ki woh div jiska color yeh hai that we want to flash 
     let randBtn = document.querySelector(`.${randColor}`)
     
-    btnFlash(randBtn)
+    btnFlash(randBtn , "COMP")
+}
+
+function keyPress(){
+    if(isGameStarted){
+        btnFlash(this , "USER")
+    }
+}
+
+let allBtns = document.querySelectorAll(".btn")
+for(btn of allBtns){
+    btn.addEventListener("click" , keyPress);
 }

@@ -7,7 +7,6 @@
 }
 
 body{
-    border: 1px solid red;
     text-align: center;
 }
 
@@ -59,4 +58,8 @@ h2{
 
 .white{
     background: white;
+}
+
+.grey{
+    background-color: rgb(236, 230, 230);
 }
